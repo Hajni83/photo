@@ -7,6 +7,7 @@ import Logo from "./Logo";
 const links = [
   { href: "#rolam", label: "Rólam" },
   { href: "#munkaim", label: "Munkáim" },
+  { href: "#csomagok", label: "Csomagok" },
   { href: "#kapcsolat", label: "Kapcsolat" },
 ];
 
