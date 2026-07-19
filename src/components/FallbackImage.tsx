@@ -9,13 +9,14 @@ type Props = {
   sizes?: string;
   className?: string;
   priority?: boolean;
+  fit?: "cover" | "contain";
 };
 
 /**
  * next/image `fill` kép, ami hiányzó fájl esetén elegáns
  * színátmenetes helykitöltőt mutat a kép neve helyett.
  */
-export default function FallbackImage({ src, alt, sizes, className, priority }: Props) {
+export default function FallbackImage({ src, alt, sizes, className, priority, fit = "cover" }: Props) {
   const [failed, setFailed] = useState(false);
 
   if (failed) {
@@ -36,7 +37,7 @@ export default function FallbackImage({ src, alt, sizes, className, priority }: 
       sizes={sizes}
       quality={90}
       priority={priority}
-      className={`object-cover ${className ?? ""}`}
+      className={`${fit === "contain" ? "object-contain" : "object-cover"} ${className ?? ""}`}
       onError={() => setFailed(true)}
     />
   );

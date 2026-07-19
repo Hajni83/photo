@@ -93,7 +93,7 @@ export default function Lightbox({ category, onClose }: Props) {
                   src={category.gallery[index]}
                   alt={`${category.name} fotózás – ${index + 1}. kép`}
                   sizes="100vw"
-                  className="object-contain"
+                  fit="contain"
                 />
               </motion.div>
             </AnimatePresence>
