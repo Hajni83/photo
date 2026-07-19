@@ -34,6 +34,7 @@ export default function FallbackImage({ src, alt, sizes, className, priority }: 
       alt={alt}
       fill
       sizes={sizes}
+      quality={90}
       priority={priority}
       className={`object-cover ${className ?? ""}`}
       onError={() => setFailed(true)}

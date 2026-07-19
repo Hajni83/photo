@@ -76,7 +76,7 @@ export default function Hero() {
         </div>
 
         {/* fotókollázs */}
-        <div className="relative mx-auto hidden h-[30rem] w-full max-w-md sm:block">
+        <div className="relative mx-auto h-[22rem] w-full max-w-xs sm:h-[30rem] sm:max-w-md">
           {heroImages.map((img, i) => (
             <motion.div
               key={img.src}
@@ -92,7 +92,7 @@ export default function Hero() {
                 top: `${i * 8}%`,
               }}
             >
-              <FallbackImage src={img.src} alt={img.alt} sizes="300px" priority={i === 0} />
+              <FallbackImage src={img.src} alt={img.alt} sizes="(max-width: 640px) 60vw, 300px" priority={i === 0} />
             </motion.div>
           ))}
         </div>
